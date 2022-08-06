@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { EvenComponent } from './even/even.component';
+import { OddComponent } from './odd/odd.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,28 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'component-example';
+
+  @ViewChild(EvenComponent) evenComponent: any;
+  @ViewChild(OddComponent) oddComponent: any;
+
+  oddComp: any = [];
+  evenComp: any = [];
+  incNumber: number = 0;
+  evenValue = 0;
+  oddValue = 0;
+
+  constructor(){}
+
+  createComponent(event: any){
+    console.log("event: ", event);
+    this.incNumber = event;
+    if(this.incNumber % 2 != 0) {
+      this.oddValue = this.incNumber;
+      this.oddComp.push(this.oddComponent);
+    }
+    else {
+      this.evenValue = this.incNumber;
+      this.evenComp.push(this.evenComponent);
+    }
+  }
 }
