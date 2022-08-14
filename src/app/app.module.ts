@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 import { OddComponent } from './odd/odd.component';
 import { EvenComponent } from './even/even.component';
 import { GameControlComponent } from './game-control/game-control.component';
+import { ActiveUsersComponent } from './active-users/active-users.component';
+import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { GameControlComponent } from './game-control/game-control.component';
     SuccessAlertComponent,
     OddComponent,
     EvenComponent,
-    GameControlComponent
+    GameControlComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,

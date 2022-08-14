@@ -1,0 +1,6 @@
+<div class="list-group" *ngFor="let user of users">
+    <a href="#" class="list-group-item list-group-item-action">
+        {{ user }} |
+        <a href="#" (click)="setToActive(user)">Set to active</a>
+    </a>
+</div>

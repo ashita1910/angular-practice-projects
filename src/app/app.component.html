@@ -1,9 +1,15 @@
 <div class="container mt-5">
-    <app-game-control (incNum)="createComponent($event)"></app-game-control>
-    <div *ngFor="let even of evenComp;" class="mt-2">
-        <app-even [evenVal]="evenValue"></app-even>
-    </div>
-    <div *ngFor="let odd of oddComp;" class="mt-2">
-        <app-odd [oddVal]="oddValue"></app-odd>
-    </div>
+    <h3>Active Users
+        <h6 *ngIf="counterService.inactiveToactiveActions">
+            (Inactive to Active Count : {{counterService.inactiveToactiveActions}})
+        </h6>
+    </h3>
+    <app-active-users></app-active-users>
+    <hr>
+    <h3>Inactive Users
+        <h6 *ngIf="counterService.activeToInactiveActions">
+            (Active to Inactive Count : {{counterService.activeToInactiveActions}})
+        </h6>
+    </h3>
+    <app-inactive-users></app-inactive-users>
 </div>

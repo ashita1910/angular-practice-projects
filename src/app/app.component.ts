@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { EvenComponent } from './even/even.component';
 import { OddComponent } from './odd/odd.component';
+import { CounterService } from './services/counter.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ export class AppComponent {
   evenValue = 0;
   oddValue = 0;
 
-  constructor(){}
+  constructor(public counterService: CounterService){}
 
   createComponent(event: any){
     console.log("event: ", event);
